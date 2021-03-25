@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>Mine Sweeper</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body onload="initGame()">
+    <h1>Mine Sweeper</h1>
+    <div class="level-area">
+        <span>Choose game level:</span>
+        <input type="radio" name="level" value="4" class="defualt-radio" onclick="setLevel(this)" checked> Beginner
+        <input type="radio" name="level" value="8" onclick="setLevel(this)"> Medium
+        <input type="radio" name="level" value="12" onclick="setLevel(this)"> Expert
+    </div>
+    <div class="info-area">
+        <span class="timer">Time: 00:00 </span>
+        <span class="score"></span>
+    </div>
+    <div>
+        <span class="life"></span>
+        <span class="smiley-mode"></span>
+        <span class="hint"></span>
+    </div>
+    <table class="table" border="1" cellpadding="10">
+        <tbody class="board"></tbody>
+    </table>
+
+
+
+    <script src="js/utils.js"></script>
+    <script src="js/board.js"></script>
+    <script src="js/game.js"></script>
+</body>
+
+</html>
