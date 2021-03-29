@@ -1,36 +1,52 @@
 <html>
-
-<head>
-    <title>Mine Sweeper</title>
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-
-<body onload="initGame()">
-    <h1>Mine Sweeper</h1>
-    <div class="level-area">
-        <span>Choose game level:</span>
-        <input type="radio" name="level" value="4" class="defualt-radio" onclick="setLevel(this)" checked> Beginner
-        <input type="radio" name="level" value="8" onclick="setLevel(this)"> Medium
-        <input type="radio" name="level" value="12" onclick="setLevel(this)"> Expert
+    
+    <head>
+        <title>Mine Sweeper</title>
+        <link rel="stylesheet" href="./css/main.css">
+    </head>
+    
+    <body onload="init()">
+        <h1>Mine Sweeper</h1>
+        <div>
+            <span class="name-span">Enter your name: </span>
+            <input type="text" class="user-name" value="">
+            <button type="submit" onclick="setUserName()">Submit</button>
+        </div>
+        <div class="level">
+            <button type="button" value="4" onclick="setLevel(this,2)">Begginer (4X4)</button>
+            <button type="button" value="8" onclick="setLevel(this,12)">Medium (8X8)</button>
+            <button type="button" value="12" onclick="setLevel(this,30)">Expert (12X12)</button>
+        </div>
+        <div class="info-area">
+            <span class="timer">Time: 00:00 </span>
+            <span class="flags"></span>
+        </div>
     </div>
-    <div class="info-area">
-        <span class="timer">Time: 00:00 </span>
-        <span class="score"></span>
+    <div class="smiley-area">
+        <span class="life"></span>
+        <span class="smiley-mode" onclick="init()"></span>
+        <span class="hint" onclick="getHint()"></span>
     </div>
     <div>
-        <span class="life"></span>
-        <span class="smiley-mode"></span>
-        <span class="hint"></span>
+        <button class="safe" onclick="safeClick()">Safe-Click</button>
+        <span class="safe-click-msg"></span>
     </div>
-    <table class="table" border="1" cellpadding="10">
-        <tbody class="board"></tbody>
+    <div>
+        <table class="table" border="1" cellpadding="10">
+            <tbody class="board"></tbody>
+        </table>
+    </div>
+    <table class="players-table" border="1" cellpadding="10">
+        <tbody class="scores">
+        </tbody>
     </table>
-
-
-
-    <script src="js/utils.js"></script>
-    <script src="js/board.js"></script>
-    <script src="js/game.js"></script>
-</body>
+    <div>
+        
+        
+        
+        <script src="js/util.js"></script>
+        <script src="js/timer.js"></script>
+        <script src="js/main.js"></script>
+    </body>
 
 </html>
